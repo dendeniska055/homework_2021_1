@@ -5,8 +5,6 @@ QUnit.module('Тестируем функцию tree', function () {
 		assert.strictEqual(tree(0), null);
 		assert.strictEqual(tree(1), null);
 		assert.strictEqual(tree(2), null);
-		assert.strictEqual(tree([2]), null);
-		assert.strictEqual(tree(['2']), null);
 		assert.strictEqual(tree('0'), null);
 		assert.strictEqual(tree('1'), null);
 		assert.strictEqual(tree('2'), null);
@@ -19,8 +17,6 @@ QUnit.module('Тестируем функцию tree', function () {
 			' | \n';
 		assert.strictEqual(tree(3), expected);
 		assert.strictEqual(tree('3'), expected);
-		assert.strictEqual(tree([3]), expected);
-		assert.strictEqual(tree(['3']), expected);
 	});
 
 	QUnit.test('Ёлочка высотой 4', function (assert) {
@@ -62,6 +58,8 @@ QUnit.module('Тестируем функцию tree', function () {
 		assert.strictEqual(tree('razdvatri'), null);
 		assert.strictEqual(tree('three'), null);
 		assert.strictEqual(tree([]), null);
+		assert.strictEqual(tree([3]), null);
+		assert.strictEqual(tree(['3']), null);
 		assert.strictEqual(tree(['3', '3', '3']), null);
 		assert.strictEqual(tree({}), null);
 		assert.strictEqual(tree({countOfLevels:3}), null);

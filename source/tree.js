@@ -8,7 +8,13 @@
  */
 
 const tree = (countOfLevels) => {
-	if (!countOfLevels || !Number(countOfLevels) || countOfLevels < 3) {
+	if (
+		!countOfLevels ||
+		!Number(countOfLevels) ||
+		(typeof countOfLevels !== 'number' &&
+			typeof countOfLevels !== 'string') ||
+		countOfLevels < 3
+	) {
 		return null;
 	}
 
