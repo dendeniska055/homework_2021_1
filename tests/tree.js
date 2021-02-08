@@ -55,6 +55,14 @@ QUnit.module('Тестируем функцию tree', function () {
 	});
 	
 	QUnit.test('Неверные параметры запуска', function (assert) {
+		assert.strictEqual(tree([]), null);
+		assert.strictEqual(tree([3]), null);
+		assert.strictEqual(tree(['3']), null);
+		assert.strictEqual(tree(['3', '3', '3']), null);
+		assert.strictEqual(tree({}), null);
+		assert.strictEqual(tree({countOfLevels:3}), null);
+		assert.strictEqual(tree({countOfLevels:'3'}), null);
+		assert.strictEqual(tree({countOfLevels:'3'}), null);
 		assert.strictEqual(tree(null), null);
 		assert.strictEqual(tree(), null);
 	});	

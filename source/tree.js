@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /***
  * Функция возвращает строку, которая является елочкой (минимальной высотой 3)
@@ -8,17 +8,24 @@
  */
 
 const tree = (countOfLevels) => {
-    if (!countOfLevels || countOfLevels < 3) return null;
-    
-    let resultString = "";
+	if (
+		!countOfLevels ||
+		(typeof countOfLevels !== 'number' &&
+			typeof countOfLevels !== 'string') ||
+		countOfLevels < 3
+	) {
+		return null;
+	}
 
-    for (let i = 0; i < countOfLevels - 1; i++) {
-        let spaces = " ".repeat(countOfLevels - 2 - i);
-        resultString += `${spaces}${"*".repeat(i * 2 + 1)}${spaces}\n`;
-    }
+	let resultString = '';
 
-    let spaces = " ".repeat(countOfLevels - 2);
-    resultString += `${spaces}|${spaces}\n`;
+	for (let i = 0; i < countOfLevels - 1; i++) {
+		const spaces = ' '.repeat(countOfLevels - 2 - i);
+		resultString += `${spaces}${'*'.repeat(i * 2 + 1)}${spaces}\n`;
+	}
 
-    return resultString;
+	const spaces = ' '.repeat(countOfLevels - 2);
+	resultString += `${spaces}|${spaces}\n`;
+
+	return resultString;
 };
