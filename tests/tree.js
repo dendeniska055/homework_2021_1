@@ -53,4 +53,9 @@ QUnit.module('Тестируем функцию tree', function () {
 		assert.strictEqual(tree(8), expected);
 		assert.strictEqual(tree('8'), expected);
 	});
+	
+	QUnit.test('Неверные параметры запуска', function (assert) {
+		assert.strictEqual(tree(null), null);
+		assert.strictEqual(tree(), null);
+	});	
 });
