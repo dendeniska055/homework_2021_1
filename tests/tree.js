@@ -59,6 +59,7 @@ QUnit.module('Тестируем функцию tree', function () {
 	});
 	
 	QUnit.test('Неверные параметры запуска', function (assert) {
+		assert.strictEqual(tree('razdvatri'), null);
 		assert.strictEqual(tree('three'), null);
 		assert.strictEqual(tree([]), null);
 		assert.strictEqual(tree(['3', '3', '3']), null);
